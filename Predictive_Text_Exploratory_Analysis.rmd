@@ -1,6 +1,6 @@
 ---
 ### **Predictive Text Exploratory Analysis**
-Stephanie Stallworth
+Stephanie Stallworth  
 May 7, 2017
 
 ```{r setup, include=FALSE}
