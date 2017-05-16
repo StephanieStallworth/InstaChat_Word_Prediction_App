@@ -1,3 +1,3 @@
-### **InstaChat_Word_Prediction_App**  
+### **InstaChat Word Prediction App**  
 
 Shiny app predicting words based on user input
