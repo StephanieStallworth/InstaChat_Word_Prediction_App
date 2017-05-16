@@ -1,19 +1,17 @@
 ---
-title: "Predictive Text Exploratory Analysis"
-author: "Stephanie Stallworth"
-date: "May 7, 2017"
-output: html_document
----
+### **Predictive Text Exploratory Analysis**
+Stephanie Stallworth
+May 7, 2017
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,comment="",warning=FALSE,message=FALSE,cache=TRUE)
 ```
 
-###**Executive Summary**
+### **Executive Summary**
 This exploratory analysis is the first step in the development of a predictive text model that will suggest words based on user input.  
 The model will be trained using a corpus (a collection of English text) compiled from 3 sources - news, blogs, and tweets. In the following report, I will load and clean the data as well as use NLM (Natural Language Processing) techniques to perform exploratory analysis and build the predictive model.  
 
-###**Processing the Data**
+### **Processing the Data**
 
 The zip file containing the raw corpus data was downloaded from:   
 https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip.
@@ -61,7 +59,7 @@ data.frame(source = c("blogs", "news", "twitter"),
            num.words = c(sum(blogs.words), sum(news.words), sum(twitter.words)),
            mean.num.words = c(mean(blogs.words), mean(news.words), mean(twitter.words)))
 ```
-###**Cleaning The Data**
+### **Cleaning The Data**
 Before performing the exploratory analysis, the data must be scrubbed of all URLs, special characters, punctuation, numbers, trailing spaces, and stop words.
 
 As the summary table shows, the data is quite large. Thus, a sample of 1% is randomly chosen for cleaning and exploratory analysis.
@@ -92,7 +90,7 @@ corpus <- tm_map(corpus, PlainTextDocument)
 ```
 
 
-###**Exploratory Analysis**
+### **Exploratory Analysis**
 
 **Word Cloud**
 
@@ -150,7 +148,7 @@ freq2 <- getFreq(removeSparseTerms(TermDocumentMatrix(corpus, control = list(tok
 makePlot(freq2, "50 Most Common bigrams")
 ```
 
-###**Conclusion and Next Steps**
+### **Conclusion and Next Steps**
 
 Through this exploratory analysis, I identified the most commonly used words which will be helpful in the next steps of this project.   
 
