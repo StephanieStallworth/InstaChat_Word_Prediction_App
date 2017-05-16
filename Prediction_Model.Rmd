@@ -1,15 +1,13 @@
----
-title: "Predictive Model"
-author: "Stephanie Stallworth"
-date: "May 14, 2017"
-output: html_document
----
+
+### "InstaChat Predictive Model"
+Stephanie Stallworth   
+May 14, 2017
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment="",message= FALSE, warning=FALSE, cache = TRUE)
 ```
 
-###**Executive Summary**
+### **Executive Summary**
 
 The objective of this exercise is to build a predictive model and evaluate its efficiency in predicting answers to the following quiz:
 
@@ -24,7 +22,7 @@ The objective of this exercise is to build a predictive model and evaluate its e
 -"Be grateful for the good times and keep the faith during the"  
 -"If this isn't the cutest thing you've ever seen, then you must be"  
 
-###**PreProcessing**
+### **PreProcessing**
 ```{r}
 library(tm);library(dplyr);library(ggplot2)
 library(pryr);library(stringr);library(RWeka)
@@ -62,7 +60,7 @@ df.blogs = readLines("./final/en_US/en_US.blogs.txt", encoding = "UTF-8")
 df.news = readLines("./final/en_US/en_US.news.txt", encoding = "UTF-8")
 ```
 
-###**Prediction**  
+### **Prediction**  
 
 To make predictions, the last n-grams are first extracted from the sentence.
 ```{r}
@@ -88,7 +86,7 @@ caseofmatch = caseofmatch[order(-caseofmatch$freq),]
 ```
 Based on the sample, the most frequent word after "a case of" is "the". The second most frequent word is "beer". 
 
-###**Quiz Predictions**  
+### **Quiz Predictions**  
 
 All the 3-grams in each sentence of the quiz are extracted.
 
